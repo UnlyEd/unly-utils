@@ -5,11 +5,11 @@
   "main": "index.js",
   "author": "unlyEd",
   "license": "MIT",
-  "repository": "https://github.com/UnlyEd/UnlyUtils.git",
+  "repository": "https://github.com/UnlyEd/unly-utils.git",
   "bugs": {
-    "url": "https://github.com/UnlyEd/UnlyUtils.git/issues"
+    "url": "https://github.com/UnlyEd/unly-utils.git/issues"
   },
-  "homepage": "https://github.com/UnlyEd/UnlyUtils",
+  "homepage": "https://github.com/UnlyEd/unly-utils",
   "jest": {
     "verbose": true,
     "testEnvironment": "node"
