@@ -1,15 +1,15 @@
 {
-  "name": "unly-utils",
+  "name": "@unly/utils",
   "version": "1.0.0",
   "description": "Library of tools to help and improve development",
   "main": "index.js",
   "author": "unlyEd",
   "license": "MIT",
-  "repository": "https://github.com/UnlyEd/unly-utils.git",
+  "repository": "https://github.com/UnlyEd/utils.git",
   "bugs": {
-    "url": "https://github.com/UnlyEd/unly-utils.git/issues"
+    "url": "https://github.com/UnlyEd/utils.git/issues"
   },
-  "homepage": "https://github.com/UnlyEd/unly-utils",
+  "homepage": "https://github.com/UnlyEd/utils",
   "jest": {
     "verbose": true,
     "testEnvironment": "node"
