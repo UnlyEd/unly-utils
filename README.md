@@ -7,7 +7,7 @@ Install:
 npm or yarn
 
 ```
-    npm install https://github.com/UnlyEd/unly-utils.git
+npm install https://github.com/UnlyEd/unly-utils.git
 ```
 
 Use:
@@ -21,4 +21,37 @@ Library:
 |   | param(s)         | return |
 | :--------------- |:---------------:| :-----:|
 | isBrowser |          | Boolean |
-| convertLineBreaks  | string | string |
+| convertLineBreaks  | string, replacer | string |
+| browserRedirect  | object { url, target } | string |
+
+## Development
+
+### lint
+
+```
+yarn run lint
+```
+
+### Test
+
+Run once:
+```
+yarn run test:once
+```
+
+Watch:
+```
+yarn test
+```
+
+Coverage:
+```
+yarn run test:coverage
+```
+
+### Build
+
+```
+yarn run build
+```
+> Dir dist => Commonjs

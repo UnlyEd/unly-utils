@@ -1,5 +1,5 @@
 parserOptions:
-  ecmaVersion: 2017
+  ecmaVersion: 5
 extends: [ 'airbnb-base' ]
 rules:
   semi: [ "error", "always"]
@@ -18,3 +18,4 @@ env:
   jest: true
   node: true
   es6: true
+  browser: true

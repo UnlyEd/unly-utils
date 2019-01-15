@@ -16,11 +16,18 @@
   },
   "scripts": {
     "lint": "eslint . --cache --fix",
-    "test:once": "jest",
-    "test": "jest --watch",
-    "coverage": "jest --coverage"
+    "test:once": "NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest --watch",
+    "coverage": "NODE_ENV=test jest --coverage",
+    "build": "babel lib --out-dir dist"
   },
   "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "23.6.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
