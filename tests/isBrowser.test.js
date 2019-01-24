@@ -5,7 +5,7 @@
  * @jest-environment jsdom
  */
 
-const isBrowser = require('./isBrowser');
+const isBrowser = require('../lib/isBrowser');
 
 describe('isBrowser', () => {
   test('Should return true in a jsdom environment', () => {

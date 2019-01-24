@@ -19,7 +19,12 @@
     "test:once": "NODE_ENV=test jest",
     "test": "NODE_ENV=test jest --watch",
     "coverage": "NODE_ENV=test jest --coverage",
-    "build": "babel lib --out-dir dist"
+    "build": "babel lib --out-dir dist",
+    "pretest": "yarn run lint",
+    "preversion": "yarn run lint && yarn run test",
+    "publish:beta": "npm publish --tag beta --access public",
+    "publish:alpha": "npm publish --tag alpha --access public",
+    "publish:latest": "npm publish --tag latest --access public"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -32,5 +37,11 @@
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
     "jest": "23.6.0"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "index.js",
+    "README.md"
+  ]
 }
