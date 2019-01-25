@@ -24,7 +24,7 @@
     "postversion": "git push && git push --tags",
     "release:beta": "npm publish --tag beta --access=public",
     "release:alpha": "npm publish --tag alpha --access=public",
-    "release:latest": "npm publish --tag latest --access=public",
+    "release:latest": "npm publish --tag latest --access=public"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
