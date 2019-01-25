@@ -1,57 +1,73 @@
-# unly-utils
+# Unly Utils
 
-This project is a transversal project, which aims to gather and share different tools to improve the scalability between different projects
+This is a utility library which contains various helpers.
+This repository was created because those helpers are used amongst several projects and were copy/pasted, which is a bad practice.
 
-Install:
+<!-- toc -->
+
+- [Getting started](#getting-started)
+- [API](#api)
+- [Contributing](#contributing)
+  * [Getting started](#getting-started-1)
+  * [Test](#test)
+  * [Releasing and publishing](#releasing-and-publishing)
+- [License](#license)
+
+<!-- tocstop -->
+
+## Getting started
 
 npm or yarn
 
 ```
-npm install https://github.com/UnlyEd/unly-utils.git
+yarn add @unly/utils
 ```
 
-Use:
+Usage example:
 
 ```
-const { isBrowser } = require('unly-utils');
+const { isBrowser, convertLineBreaks, browserRedirect } = require('unly-utils');
 ```
 
-Library:
+## API
 
-|   | param(s)         | return |
-| :--------------- |:---------------:| :-----:|
-| isBrowser |          | Boolean |
-| convertLineBreaks  | string, replacer | string |
-| browserRedirect  | object { url, target } | string |
+[API](./API.md)
 
-## Development
+---
 
-### lint
+## Contributing
+
+We gladly accept PRs, but please open an issue first so we can discuss it beforehand.
+
+### Getting started
 
 ```
-yarn run lint
+yarn start # Shortcut - Runs linter + build + tests in concurrent mode (watch mode)
+
+OR run each process separately for finer control
+
+yarn lint
+yarn build
+yarn test
 ```
 
 ### Test
 
-Run once:
 ```
-yarn run test:once
-```
-
-Watch:
-```
-yarn test
+yarn test # Run all tests, interactive and watch mode
+yarn test:once
+yarn test:coverage
 ```
 
-Coverage:
-```
-yarn run test:coverage
-```
-
-### Build
+### Releasing and publishing
 
 ```
-yarn run build
+yarn releaseAndPublish # Shortcut - Will prompt for bump version, commit, create git tag, push commit/tag and publish to NPM
+
+yarn release # Will prompt for bump version, commit, create git tag, push commit/tag
+npm publish # Will publish to NPM
 ```
-> Dir dist => Commonjs
+
+## License
+
+MIT

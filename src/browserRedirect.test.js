@@ -1,4 +1,4 @@
-const browserRedirect = require('../lib/browserRedirect');
+const browserRedirect = require('./browserRedirect');
 
 class Window {
   constructor() {

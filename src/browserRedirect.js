@@ -1,16 +1,11 @@
-"use strict";
-
 /**
  * Redirect that handles the HTML <a> target
  * to redirect the current frame or open a new tab.
  *
- * @param redirect.url
- * @param redirect.target
+ * @param url
+ * @param target
  */
-var browserRedirect = function browserRedirect(redirect) {
-  var url = redirect.url,
-      target = redirect.target;
-
+const browserRedirect = ({ url, target }) => {
   if (target === '_blank') {
     window.open(url, target);
   } else {

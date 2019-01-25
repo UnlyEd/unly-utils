@@ -2,4 +2,4 @@
 /build/**
 /coverage/**
 *.test.js
-/dist/**
+/lib/**
