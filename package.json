@@ -1,6 +1,6 @@
 {
   "name": "@unly/utils",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "Common utils",
   "main": "index.js",
   "author": "unlyEd",
@@ -16,10 +16,15 @@
   },
   "scripts": {
     "lint": "eslint . --cache --fix",
-    "test:once": "NODE_ENV=test jest",
-    "test": "NODE_ENV=test jest --watch",
-    "coverage": "NODE_ENV=test jest --coverage",
-    "build": "babel lib --out-dir dist"
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "build": "babel lib --out-dir dist",
+    "preversion": "yarn run lint && yarn run test",
+    "postversion": "git push && git push --tags",
+    "release:beta": "npm publish --tag beta --access=public",
+    "release:alpha": "npm publish --tag alpha --access=public",
+    "release:latest": "npm publish --tag latest --access=public",
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -32,5 +37,14 @@
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
     "jest": "23.6.0"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "index.js",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
