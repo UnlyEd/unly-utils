@@ -1,6 +1,6 @@
 {
   "name": "@unly/utils",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "description": "Common utils",
   "repository": "https://github.com/UnlyEd/utils.git",
   "homepage": "https://github.com/UnlyEd/utils",
@@ -28,7 +28,7 @@
     "clean": "rm -rf lib/",
     "lint": "esw src/ --fix --watch",
     "lint:once": "eslint src/ --fix",
-    "preversion": "yarn lint:once && yarn test:once && yarn doc:toc && yarn doc:api",
+    "preversion": "yarn lint:once && yarn test:once && yarn doc:toc && yarn run doc:api",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "yarn clean && yarn build:once && yarn publish:preview && cli-confirm \"Do you really want to release a new version? Please check the files that will be publicly released first.\"",
     "publish:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
