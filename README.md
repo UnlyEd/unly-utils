@@ -3,6 +3,7 @@
 <!-- toc -->
 
 - [Getting started](#getting-started)
+- [API](#api)
 - [Contributing](#contributing)
   * [Getting started](#getting-started-1)
   * [Test](#test)
