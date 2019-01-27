@@ -1,6 +1,4 @@
-# unly-utils
-
-This project is a transversal project, which aims to gather and share different tools to improve the scalability between different projects
+# Unly Utils
 
 Install:
 
@@ -54,4 +52,3 @@ yarn run test:coverage
 ```
 yarn run build
 ```
-> Dir dist => Commonjs

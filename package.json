@@ -2,29 +2,39 @@
   "name": "@unly/utils",
   "version": "1.0.0-alpha.1",
   "description": "Common utils",
-  "main": "index.js",
+  "repository": "https://github.com/UnlyEd/utils.git",
+  "homepage": "https://github.com/UnlyEd/utils",
   "author": "unlyEd",
   "license": "MIT",
-  "repository": "https://github.com/UnlyEd/utils.git",
   "bugs": {
     "url": "https://github.com/UnlyEd/utils.git/issues"
   },
-  "homepage": "https://github.com/UnlyEd/utils",
+  "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "jest": {
     "verbose": true,
     "testEnvironment": "node"
   },
   "scripts": {
+    "build": "babel src/ --out-dir lib/",
+    "clean": "rm -rf lib/",
     "lint": "eslint . --cache --fix",
-    "test": "NODE_ENV=test jest",
-    "test:watch": "NODE_ENV=test jest --watch",
-    "test:coverage": "NODE_ENV=test jest --coverage",
-    "build": "babel lib --out-dir dist",
-    "preversion": "yarn run lint && yarn run test",
+    "preversion": "yarn run lint && yarn run test:once",
     "postversion": "git push && git push --tags",
-    "release:beta": "npm publish --tag beta --access=public",
-    "release:alpha": "npm publish --tag alpha --access=public",
-    "release:latest": "npm publish --tag latest --access=public"
+    "prepublishOnly": "yarn run clean && yarn run build && yarn run release:preview && cli-confirm \"Do you really want to release a new version? Please check the files that will be publicly released first.\"",
+    "release:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "release:alpha": "npm publish --tag alpha",
+    "release:beta": "npm publish --tag beta",
+    "release:latest": "npm publish --tag latest",
+    "test": "NODE_ENV=test jest --watch",
+    "test:once": "NODE_ENV=test jest",
+    "test:coverage": "NODE_ENV=test jest --coverage"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -33,18 +43,11 @@
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
+    "cli-confirm": "1.0.1",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
     "jest": "23.6.0"
-  },
-  "files": [
-    "dist",
-    "lib",
-    "index.js",
-    "README.md"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }
+
