@@ -22,15 +22,20 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "build": "babel src/ --out-dir lib/",
+    "start": "cross-env-shell 'concurrently -p '{name}' -n 'lint,build,test' -c 'gray.bgWhite,yellow.bgBlue,green.bgWhite' \"yarn lint\" \"yarn build\" \"yarn test\"'",
+    "build": "babel src/ --out-dir lib/ --watch",
+    "build:once": "babel src/ --out-dir lib/",
     "clean": "rm -rf lib/",
-    "lint": "eslint . --cache --fix",
-    "preversion": "yarn run lint && yarn run test:once",
+    "lint": "esw src/ --fix --watch",
+    "lint:once": "eslint src/ --fix",
+    "preversion": "yarn lint:once && yarn test:once && yarn doc:toc && yarn doc:api",
     "postversion": "git push && git push --tags",
-    "prepublishOnly": "yarn run clean && yarn run build && yarn run release:preview && cli-confirm \"Do you really want to release a new version? Please check the files that will be publicly released first.\"",
-    "release:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "prepublishOnly": "yarn clean && yarn build:once && yarn publish:preview && cli-confirm \"Do you really want to release a new version? Please check the files that will be publicly released first.\"",
+    "publish:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
     "release": "yarn bump --prompt --commit --tag --push",
-    "publish": "npm publish",
+    "releaseAndPublish": "yarn release && npm publish",
+    "doc:api": "jsdoc2md -f ./src/*.js > API.md ",
+    "doc:toc": "yarn markdown-toc --maxdepth 4 -i README.md",
     "test": "NODE_ENV=test jest --watch",
     "test:once": "NODE_ENV=test jest",
     "test:coverage": "NODE_ENV=test jest --coverage"
@@ -43,10 +48,15 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "cli-confirm": "1.0.1",
+    "concurrently": "4.1.0",
+    "cross-env": "5.2.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
+    "eslint-watch": "4.0.2",
     "jest": "23.6.0",
+    "jsdoc-md": "1.7.0",
+    "markdown-toc": "1.2.0",
     "version-bump-prompt": "4.2.2"
   }
 }

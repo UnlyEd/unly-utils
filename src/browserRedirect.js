@@ -2,11 +2,10 @@
  * Redirect that handles the HTML <a> target
  * to redirect the current frame or open a new tab.
  *
- * @param redirect.url
- * @param redirect.target
+ * @param url
+ * @param target
  */
-const browserRedirect = (redirect) => {
-  const { url, target } = redirect;
+const browserRedirect = ({ url, target }) => {
   if (target === '_blank') {
     window.open(url, target);
   } else {
