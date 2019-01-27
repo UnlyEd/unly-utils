@@ -1,6 +1,6 @@
 {
   "name": "@unly/utils",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.3",
   "description": "Common utils",
   "repository": "https://github.com/UnlyEd/utils.git",
   "homepage": "https://github.com/UnlyEd/utils",
@@ -29,9 +29,7 @@
     "postversion": "git push && git push --tags",
     "prepublishOnly": "yarn run clean && yarn run build && yarn run release:preview && cli-confirm \"Do you really want to release a new version? Please check the files that will be publicly released first.\"",
     "release:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "release:alpha": "npm publish --tag alpha",
-    "release:beta": "npm publish --tag beta",
-    "release:latest": "npm publish --tag latest",
+    "release": "yarn bump --prompt --commit --tag --push",
     "test": "NODE_ENV=test jest --watch",
     "test:once": "NODE_ENV=test jest",
     "test:coverage": "NODE_ENV=test jest --coverage"
@@ -47,6 +45,7 @@
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
-    "jest": "23.6.0"
+    "jest": "23.6.0",
+    "version-bump-prompt": "4.2.2"
   }
 }
