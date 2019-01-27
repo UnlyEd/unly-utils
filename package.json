@@ -1,6 +1,6 @@
 {
   "name": "@unly/utils",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "description": "Common utils",
   "repository": "https://github.com/UnlyEd/utils.git",
   "homepage": "https://github.com/UnlyEd/utils",
@@ -34,7 +34,7 @@
     "publish:preview": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
     "release": "yarn bump --prompt --commit --tag --push",
     "releaseAndPublish": "yarn release && npm publish",
-    "doc:api": "jsdoc2md -f ./src/*.js > API.md ",
+    "doc:api": "yarn jsdoc2md -f ./src/*.js > API.md",
     "doc:toc": "yarn markdown-toc --maxdepth 4 -i README.md",
     "test": "NODE_ENV=test jest --watch",
     "test:once": "NODE_ENV=test jest",
@@ -55,7 +55,7 @@
     "eslint-plugin-import": "2.14",
     "eslint-watch": "4.0.2",
     "jest": "23.6.0",
-    "jsdoc-md": "1.7.0",
+    "jsdoc-to-markdown": "4.0.1",
     "markdown-toc": "1.2.0",
     "version-bump-prompt": "4.2.2"
   }
