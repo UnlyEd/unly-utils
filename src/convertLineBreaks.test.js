@@ -1,4 +1,4 @@
-const convertLineBreaks = require('../lib/convertLineBreaks');
+const convertLineBreaks = require('./convertLineBreaks');
 
 describe('convertLineBreaks', () => {
   test('Should throw an error when given "str" argument is not a string', () => {
