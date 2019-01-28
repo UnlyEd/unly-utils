@@ -24,8 +24,8 @@
   },
   "scripts": {
     "start": "cross-env-shell 'concurrently -p '{name}' -n 'lint,build,test' -c 'gray.bgWhite,yellow.bgBlue,green.bgWhite' \"yarn lint\" \"yarn build\" \"yarn test\"'",
-    "build": "babel src/ --out-dir lib/ --watch",
-    "build:once": "babel src/ --out-dir lib/",
+    "build": "rollup -c -w",
+    "build:once": "rollup -c",
     "clean": "rm -rf lib/",
     "lint": "esw src/ --fix --watch",
     "lint:once": "eslint src/ --fix",
@@ -58,6 +58,10 @@
     "jest": "23.6.0",
     "jsdoc-to-markdown": "4.0.1",
     "markdown-toc": "1.2.0",
+    "rollup": "1.1.2",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-resolve": "4.0.0",
     "version-bump-prompt": "4.2.2"
   }
 }

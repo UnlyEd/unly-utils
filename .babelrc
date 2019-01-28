@@ -3,14 +3,14 @@
     [
       "@babel/preset-env",
       {
-        "modules": "commonjs"
+        "modules": false
       }
     ]
   ],
   "env": {
     "test": {
       "presets": [
-        "@babel/preset-env"
+          "@babel/preset-env"
       ]
     }
   },
