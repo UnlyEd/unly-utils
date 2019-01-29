@@ -3,6 +3,4 @@
  *
  * @returns {boolean}
  */
-const isBrowser = () => typeof window !== 'undefined';
-
-module.exports = isBrowser;
+export const isBrowser = () => typeof window !== 'undefined';
