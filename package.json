@@ -1,6 +1,6 @@
 {
   "name": "@unly/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common utils",
   "repository": "https://github.com/UnlyEd/utils.git",
   "homepage": "https://github.com/UnlyEd/utils",
@@ -20,7 +20,11 @@
   },
   "jest": {
     "verbose": true,
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ]
   },
   "scripts": {
     "start": "cross-env-shell 'concurrently -p '{name}' -n 'lint,build,test' -c 'gray.bgWhite,yellow.bgBlue,green.bgWhite' \"yarn lint\" \"yarn build\" \"yarn test\"'",
