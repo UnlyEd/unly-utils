@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/UnlyEd/utils.svg?branch=master)](https://travis-ci.com/UnlyEd/utils)
+[![Maintainability](https://api.codeclimate.com/v1/badges/033f68d67ea81b7fee18/maintainability)](https://codeclimate.com/github/UnlyEd/utils/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/033f68d67ea81b7fee18/test_coverage)](https://codeclimate.com/github/UnlyEd/utils/test_coverage)
+
 # Unly Utils
 
 This is a utility library which contains various helpers.

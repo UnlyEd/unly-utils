@@ -1,5 +1,8 @@
-engines:
-  plugins:
-    eslint:
-      enabled: true
-      channel: "eslint-4"
+plugins:
+  eslint:
+    enabled: true
+    channel: "eslint-4"
+exclude_patterns:
+  - "**/node_modules/"
+  - "**.test.js"
+  - "lib/"
