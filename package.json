@@ -56,7 +56,7 @@
     "cli-confirm": "1.0.1",
     "concurrently": "4.1.0",
     "cross-env": "5.2.0",
-    "eslint": "4.19.1",
+    "eslint": "5.0.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14",
     "eslint-watch": "4.0.2",
@@ -68,6 +68,6 @@
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-node-resolve": "4.0.0",
     "version-bump-prompt": "4.2.2",
-    "webpack": "3.12.0"
+    "webpack": "4.29.0"
   }
 }
